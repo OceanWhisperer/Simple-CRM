@@ -1,88 +1,117 @@
-:
+# 🧠 Simple-CRM (Go + Fiber + GORM)
 
-🧠 Simple-CRM (Go + Fiber + GORM)
 A lightweight CRM (Customer Relationship Management) REST API built with:
 
-⚡ Fiber – Express-inspired fast HTTP framework in Go
+- ⚡ **Fiber** – Express-inspired fast HTTP framework in Go  
+- 🧬 **GORM** – ORM for handling database operations  
+- 💾 **SQLite** – Embedded file-based database  
 
-🧬 GORM – ORM for handling database operations
+---
 
-💾 SQLite – Embedded file-based database
+## 🗂 Project Structure
 
-🗂 Project Structure
+```
 Simple-CRM/
-├── main.go # Entry point
-├── go.mod # Go module config
+├── main.go           # Entry point
+├── go.mod            # Go module config
 ├── /database
-│ └── db.go # DB initialization and connection
+│   └── db.go         # DB initialization and connection
 └── /lead
-└── lead.go # Lead model and route handlers
+    └── lead.go       # Lead model and route handlers
+```
 
-📦 Setup Instructions
-Clone the repository
+---
 
-bash
-Copy
-Edit
-git clone https://github.com/OceanWhisperer/Simple-CRM.git  
-cd Simple-CRM  
-Install Go dependencies
+## 📦 Setup Instructions
 
-bash
-Copy
-Edit
-go mod tidy  
-Run the app
+### 1. Clone the repository
 
-bash
-Copy
-Edit
-go run main.go  
-App will start on http://localhost:3000
+```bash
+git clone https://github.com/OceanWhisperer/Simple-CRM.git
+cd Simple-CRM
+```
 
-📡 API Endpoints
-Method	Endpoint	Description
-GET	/api/v1/	Get all leads
-GET	/api/v1/lead/:id	Get lead by ID
-POST	/api/v1/lead	Create new lead
-DELETE	/api/v1/lead/:id	Delete lead by ID
+### 2. Install Go dependencies
 
-🧱 Lead JSON Structure
-json
-Copy
-Edit
-{  
-  "name": "Alice",  
-  "company": "CyberCorp",  
-  "email": "alice@cyber.com",  
-  "phone": 123456  
-}  
-🛠 Tech Stack
-Go 1.21+
+```bash
+go mod tidy
+```
 
-Fiber v2
+### 3. Run the app
 
-GORM
+```bash
+go run main.go
+```
 
-SQLite3
+The app will start on [http://localhost:3000](http://localhost:3000)
 
-⚠️ Notes
-✅ Commit go.mod and go.sum to version control
+---
 
-❌ Do not commit .env files or credentials
+## 📡 API Endpoints
 
-Always check for errors in:
+| Method | Endpoint           | Description       |
+| ------ | ------------------ | ----------------- |
+| GET    | `/api/v1/`         | Get all leads     |
+| GET    | `/api/v1/lead/:id` | Get lead by ID    |
+| POST   | `/api/v1/lead`     | Create new lead   |
+| DELETE | `/api/v1/lead/:id` | Delete lead by ID |
 
-c.BodyParser(&struct)
+---
 
-db.First(...)
+## 🧱 Lead JSON Structure
 
-Fiber handlers must return error like:
+```json
+{
+  "name": "Alice",
+  "company": "CyberCorp",
+  "email": "alice@cyber.com",
+  "phone": 123456
+}
+```
 
-go
-Copy
-Edit
-func Handler(c *fiber.Ctx) error  
-📄 License
-MIT — free to use, modify, distribute.
+---
 
+## 🛠 Tech Stack
+
+- **Go 1.21+**
+- **Fiber v2**
+- **GORM**
+- **SQLite3**
+
+---
+
+## ⚠️ Notes
+
+- ✅ Commit `go.mod` and `go.sum` to version control.
+- ❌ Don't commit `.env` files, API keys, or credentials.
+
+### 🔍 Always check for errors in:
+
+- `c.BodyParser(&struct)`
+- `db.First(...)`
+
+### 🧩 Fiber handlers must return error:
+
+```go
+func Handler(c *fiber.Ctx) error
+```
+
+---
+
+## ℹ️ About
+
+No description, website, or topics provided.
+
+---
+
+## 📊 Repository Stats
+
+- ⭐ 0 stars
+- 👀 0 watching
+- 🍴 0 forks
+
+---
+
+## 🛠 Languages
+
+- Go: 100%
