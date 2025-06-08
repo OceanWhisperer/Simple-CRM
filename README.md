@@ -97,21 +97,3 @@ func Handler(c *fiber.Ctx) error
 ```
 
 ---
-
-## ℹ️ About
-
-No description, website, or topics provided.
-
----
-
-## 📊 Repository Stats
-
-- ⭐ 0 stars
-- 👀 0 watching
-- 🍴 0 forks
-
----
-
-## 🛠 Languages
-
-- Go: 100%
